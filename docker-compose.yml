@@ -1,0 +1,18 @@
+version: '3.3'
+
+services:
+  icecast-server:
+    container_name: icecast2-server
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "9000:8000"
+    volumes:
+      - ./icecast.xml:/etc/icecast2/icecast.xml
+    restart: always
+    
+networks:
+  default:
+    external: true
+    name: proxy

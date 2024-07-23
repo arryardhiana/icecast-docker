@@ -1,0 +1,59 @@
+<icecast>
+    <location>Universitas Padjadjaran</location>
+    <admin>admin@example.com</admin>
+    <limits>
+        <clients>100</clients>
+        <sources>2</sources>
+        <threadpool>5</threadpool>
+        <queue-size>524288</queue-size>
+        <client-timeout>30</client-timeout>
+        <header-timeout>15</header-timeout>
+        <source-timeout>10</source-timeout>
+        <burst-on-connect>1</burst-on-connect>
+        <burst-size>65535</burst-size>
+    </limits>
+
+    <authentication>
+        <admin-user>admin</admin-user>
+        <admin-password>Unpad1957!</admin-password>
+    </authentication>
+
+    <hostname>https://livestream.unpad.ac.id/</hostname>
+    <listen-socket>
+        <port>8000</port>
+    </listen-socket>
+
+    <fileserve>1</fileserve>
+
+    <paths>
+        <basedir>/usr/share/icecast2</basedir>
+        <logdir>/var/log/icecast2</logdir>
+        <webroot>/usr/share/icecast2/web</webroot>
+        <adminroot>/usr/share/icecast2/admin</adminroot>
+        <alias source="/" destination="/status.xsl"/>
+    </paths>
+
+    <logging>
+        <accesslog>access.log</accesslog>
+        <errorlog>error.log</errorlog>
+        <loglevel>3</loglevel> <!-- 4 Debug, 3 Info, 2 Warn, 1 Error -->
+    </logging>
+
+    <security>
+        <chroot>0</chroot>
+    </security>
+
+   <mount>
+        <mount-name>/unpad</mount-name>
+        <fallback-mount>/fallback</fallback-mount>
+        <fallback-override>0</fallback-override>
+        <fallback-when-full>0</fallback-when-full>
+        <fallback-delay>10</fallback-delay>
+        <username>radio</username>
+        <password>r@dio2024</password>
+        <stream-name>My audio stream</stream-name>
+        <stream-description>Radio Official UNPAD</stream-description>
+        <stream-url>https://radio.unpad.ac.id</stream-url>
+    </mount>
+
+</icecast>
